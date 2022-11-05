@@ -6,12 +6,14 @@ import Box from "@mui/material/Box"
 import wave from "assets/wave.svg"
 import { motion } from "framer-motion"
 import Stack from "@mui/material/Stack"
-import Button from "@mui/material/Button"
 import TextField from "@mui/material/TextField"
 import Alert from "@mui/material/Alert"
 import SendIcon from "@mui/icons-material/Send"
 import "./contact.css"
 import AnimateTransition from "components/Ui/AnimateTransition";
+import LoadingButton from "components/Ui/LoadingButton";
+import { useDispatch } from "react-redux";
+import { openSnackBar } from "store/actionCreator";
 
 const containerVariants={
     hidden:{
@@ -30,6 +32,7 @@ const containerVariants={
 
 const Contact = () => {
     const nameRef = useRef()
+    const dispatch= useDispatch()
     const emailRef = useRef()
     const messageRef = useRef()
     const [msg, setMsg] = useState(null)
@@ -62,6 +65,7 @@ const Contact = () => {
                     severity:'error',
                     message:error.text
                 })
+                dispatch(openSnackBar('error',error.text))
             }).finally(() => {
                 mailLetter.current.classList.remove('move');
                 mailTop.current.classList.remove('closed');
@@ -116,9 +120,18 @@ const Contact = () => {
                             name='message'
                         />
                         <Box mt={3} textAlign='center'>
-                            <Button disabled={loading} variant="contained" type="submit" size="large" endIcon={<SendIcon />}>
+                            <LoadingButton
+                            disabled={loading}
+                            loading={loading}
+                            Icon={<SendIcon/>}
+                            addons={{
+                                type:'submit',
+                                size:'large'
+                            }}
+                            >
                                 Drop Mail
-                            </Button>
+
+                            </LoadingButton>
                         </Box>
                     </Box>
                 </Grid>

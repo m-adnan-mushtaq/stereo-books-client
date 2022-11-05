@@ -17,6 +17,7 @@ const AudioPond = lazy(()=>import("container/BookForm/AudioPond"));
 const CoverPond = lazy(()=>import("container/BookForm/CoverPond"));
 const GuardRoute = lazy(()=>import("components/GuardRoute"));
 const Logout = lazy(()=>import("container/Auth/Logout"));
+const NoPage = lazy(()=>import("components/NoPage"));
 
 const AnimatedRoutes = () => {
     return (
@@ -43,6 +44,7 @@ const AnimatedRoutes = () => {
                             <Route path='chooseCover' element={<CoverPond />} />
                         </Route>
                     </Route>
+                    <Route path="*" element={<NoPage/>} />
                 </Routes>
                 </Suspense>
             </AnimatePresence>
