@@ -1,0 +1,115 @@
+
+.fancy-quote {
+    max-width:40rem;
+    margin: 4em auto;
+    position: relative;
+}
+.fancy-quote h1 {
+  margin-top: 0;
+  font-size: 2em;
+  color: var(--primary-color);
+  font-weight: 700;
+  padding-bottom: 35px;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+.fancy-quote p {
+  line-height: 1.25em;
+}
+.fancy-quote cite { font-style:inherit;padding-left:10px;letter-spacing:1px;}
+.fancy-quote blockquote {
+  width: 100%;
+  margin-left: -50px;
+  padding: 40px 50px;
+  position: relative;
+  background: var(--primary-color);
+  color: #fff;
+  margin-bottom: 28px;
+  opacity: 0.85;
+}
+
+.fancy-quote blockquote::before,
+.fancy-quote blockquote::after {
+  top: 0;
+  bottom: 0;
+  width: 25px;
+  content: "";
+  position: absolute;
+  background: var(--primary-color);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+}
+.fancy-quote blockquote::before {
+  right: 100%;
+}
+.fancy-quote blockquote::after {
+  left: 100%;
+}
+.fancy-quote blockquote p {
+  margin: 0;
+  padding-bottom: 35px;
+  padding-top: 15px;
+}
+.fancy-quote blockquote p::before {
+  top: 0;
+  left: 16px;
+  color: var(--secondary-color);
+  content: "“";
+  font-size: 4em;
+  position: absolute;
+  text-shadow: -3px 0 #f7f7f7;
+  font-weight: bold;
+  font-family: "Times New Roman", "serif";
+
+  opacity: 0.75;
+}
+.fancy-quote blockquote p::after {
+  right: 16px;
+  color: var(--secondary-color);
+  content: "”";
+  bottom: -25px;
+  font-size: 4em;
+  position: absolute;
+  text-shadow: 3px 0 #c2c2c2;
+  font-weight: bold;
+  font-family: "Times New Roman", "serif";
+
+  opacity: 0.75;
+}
+.fancy-quote blockquote cite {
+  font-size: 18px;
+  font-style: italic !important;
+  letter-spacing: 2px;
+}
+ .fancy-quote blockquote {
+    padding-right: 0;
+    width: calc(100% + 50px);
+  }
+
+@media screen and (min-width: 750px) {
+  .fancy-quote h1 {
+    font-size: 3em;
+  }
+  .fancy-quote blockquote {
+    padding-right: 0;
+    width: calc(100% + 50px);
+  }
+  .fancy-quote blockquote::before {
+    display: none;
+  }
+  .fancy-quote blockquote::after {
+    width: 50px;
+    border-radius: 0 3px 3px 0;
+  }
+  .fancy-quote blockquote p {
+font-family: 'Poppins', sans-serif;
+    font-style: italic;
+  }
+  .fancy-quote blockquote p::after {
+    bottom: -25px;
+  }
+  .fancy-quote blockquote cite {
+    font-size: 28px;
+    font-style: normal !important;
+  }
+}
+

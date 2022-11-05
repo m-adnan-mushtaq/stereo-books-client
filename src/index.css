@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#06d6a0;
+    --secondary-color:#1b9aaa;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden !important;
+    background-color: #f5f6f9 !important;
+}
+
+
+/* common utils */
+.secondary-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.main-title{
+    font-family:'Poppins SemiBold' !important;
+}
+  

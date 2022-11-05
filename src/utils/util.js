@@ -1,0 +1,1 @@
+export const updateObject=(oldObj,newProp)=>({...oldObj,...newProp})

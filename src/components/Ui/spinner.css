@@ -1,0 +1,48 @@
+.loader-wrapper {
+    position: relative !important;
+    padding: 50px;
+    text-align: center;
+}
+.loader-60 {
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 30px, 0 -30px;
+    border-radius: 4px;
+    background: currentColor;
+    display: inline-block;
+    position: relative;
+    color: #06d6a0;
+    left: -30px;
+    animation: animloader60 2s ease infinite;
+}
+.loader-60::after, .loader-60::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 30px, 0 -30px;
+    border-radius: 4px;
+    background: currentColor;
+    color: #06d6a0;
+    position: absolute;
+    left: 30px;
+    top: 0;
+    animation: animloader60 2s 0.2s ease infinite;
+}
+.loader-60::before {
+    animation-delay: 0.4s;
+    left: 60px;
+}
+@keyframes animloader60 {
+    0% {
+        top: 0;
+        color: rgba(6, 214, 160, 1);
+   }
+    50% {
+        top: 30px;
+        color: rgba(6, 214, 160, 0.2);
+   }
+    100% {
+        top: 0;
+        color: rgba(6, 214, 160, 1);
+   }
+}
